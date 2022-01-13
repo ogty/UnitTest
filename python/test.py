@@ -19,3 +19,6 @@ class PrimalTest(unittest.TestCase):
     def test_is_prime_raise_typeerror(self):
         with self.assertRaises(TypeError):
             is_prime("string")
+            
+if __name__ == "__main__":
+    unittest.main()
