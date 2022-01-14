@@ -60,7 +60,7 @@ def is_prime_v4(num: int) -> bool:
         return False
 
     for i in range(5, math.floor(math.sqrt(num) + 1), 6):
-        if num % 1 == 0 or num % (i + 2) == 0:
+        if num % i == 0 or num % (i + 2) == 0:
             return False
 
     # i = 5
