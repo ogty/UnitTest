@@ -20,4 +20,3 @@ jobs:
         run: julia ./julia/install.jl
       - name: Run Unit Test
         run: julia ./julia/test_abb.jl
-        run: julia ./julia/test_add.jl
