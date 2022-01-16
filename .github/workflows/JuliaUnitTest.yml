@@ -1,0 +1,23 @@
+name: Unit Test
+
+on:
+  push:
+    branches: 
+      - master
+  workflow_dispatch:
+
+jobs:
+  dispatch-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1.0.0
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.7.1
+          arch: 'x64'
+      - name: Install dependencies
+        run: julia ./julia/install.jl
+      - name: Run Unit Test
+        run: julia ./julia/test_abb.jl
+        run: julia ./julia/test_add.jl
