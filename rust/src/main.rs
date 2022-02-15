@@ -1,8 +1,6 @@
 mod abb;
 
-fn main() {
-    assert_eq!(abb::abb(13), "");
-}
+fn main() {}
 
 #[test]
 fn test_is_abb_ok() {
