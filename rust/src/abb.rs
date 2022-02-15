@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap};
 
 pub trait Abb<T> {
     fn abb(&mut self, c:T) -> String ;
@@ -35,8 +35,10 @@ pub fn abb<T>(data:T) -> String where AbbImpl:Abb<T> {
     ];
     let month_num = (1..13).collect::<Vec<i32>>();
     let mut abb = AbbImpl{month_word, month_num};
-    let mut result = Abb::abb(&mut abb, data);
-    result = result.replace("Some(", "").replace("\"", "");
-    result = result.replace(")", "");
+    let result = Abb::abb(&mut abb, data)
+        .replace("Some(", "")
+        .replace(")", "")
+        .replace("\"", "")
+        .replace("None", "");
     return result
 }
